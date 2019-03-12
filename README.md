@@ -1,0 +1,47 @@
+## modelaverage
+
+<p align="center">
+    <img width="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TensorFlowLogo.svg/225px-TensorFlowLogo.svg.png" />
+    <img width="100" src="https://keras.io/img/keras-logo-small-wb.png" />
+</p>
+`modelaverage` is a pip package which make the average weight of model weight in `same models`, inspired by [Average weights in keras models](https://stackoverflow.com/questions/48212110/average-weights-in-keras-models). I created this pip package to use distributed computing environment like `kubernetes`.
+
+![](average.jpg)
+
+## Usage
+
+1. `pip install modelaverage` or `git clone https://github.com/graykode/modelaverage && python setup.py install`
+
+2. using function `average(modellist)`
+
+   - modellist : list of model file names. type should be `list`
+
+     > averaged_model = average(['mnist1.h5', 'mnist2.h5',....])
+
+   - return : input models of averaged weight
+
+
+
+## Example
+
+Please see example
+
+```python
+import tensorflow as tf
+from modelaverage import average
+
+modellist = ['models/mnist1.h5', 'models/mnist2.h5', 'models/mnist3.h5', 'models/mnist4.h5', 'models/mnist5.h5',
+             'models/mnist6.h5', 'models/mnist7.h5', 'models/mnist8.h5', 'models/mnist9.h5']
+
+averaged_model = average(modellist)
+
+for w in averaged_model.get_weights():
+    print(w.shape)
+```
+
+
+
+## Author
+
+- Name : Tae Hwan Jung(@graykode)
+- Email : nlkey2022@gmail.com
