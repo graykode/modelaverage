@@ -5,7 +5,7 @@
     <img width="100" src="https://keras.io/img/keras-logo-small-wb.png" />
 </p>
 
-`modelaverage` is a pip package which make the average weight of model weight in `same models`, inspired by [Average weights in keras models](https://stackoverflow.com/questions/48212110/average-weights-in-keras-models). I created this pip package to use distributed computing environment like `kubernetes`.
+`modelaverage` is a pip package that calculates the average value of the same model, inspired by [Average weights in keras models](https://stackoverflow.com/questions/48212110/average-weights-in-keras-models). I created it to train each mini-batch in one container as distributed computing environment, `kubernetes`.
 
 ![](average.jpg)
 
@@ -25,7 +25,7 @@
 
 ## Example
 
-Please see example
+Please see [example](https://github.com/graykode/modelaverage/blob/master/example/example.py).
 
 ```python
 import tensorflow as tf
